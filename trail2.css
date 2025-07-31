@@ -282,3 +282,75 @@ section {
     transform-style: preserve-3d;
     will-change: transform;
 }
+/* Hamburger icon styles */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  z-index: 1101;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 28px;
+  height: 3.5px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: #eceeff;
+  transition: 0.33s;
+}
+
+/* Show hamburger button only on small screens */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    top: 58px;
+    right: 24px;
+    background: rgba(24, 25, 55, 0.98);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(65, 50, 120, 0.15);
+    min-width: 190px;
+    padding: 1.4rem 0.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;      /* Hide menu by default */
+    z-index: 1100;
+    gap: 0.7rem;
+  }
+  nav ul.menu-open {    /* Shown if JS adds .menu-open */
+    display: flex;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  nav a {
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+    text-align: left;
+    border-radius: 9px;
+  }
+}
+
+/* Animate hamburger to X on open */
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
