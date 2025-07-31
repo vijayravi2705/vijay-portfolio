@@ -403,11 +403,14 @@
                 });
             });
         });
-const toggle = document.querySelector(".nav-toggle");
-const nav = document.querySelector(".nav-links");
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav-links");
 
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
+    toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    // Inside toggleHamburger function
+    document.body.style.overflow = nav.classList.contains("active") ? "hidden" : "auto";
+
 });
 
 
