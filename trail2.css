@@ -55,6 +55,11 @@ section {
     
   padding-top: 90px; /* or a bit more, equal to navbar height */
   box-sizing: border-box;
+   
+  min-height: calc(100vh - 90px);
+  padding-top: 90px;
+
+
 
 }
 .hero-container {
