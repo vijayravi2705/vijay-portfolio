@@ -1,4 +1,3 @@
-
 html {
     scroll-behavior: smooth;
 }
@@ -288,33 +287,34 @@ section {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 35px;
-  height: 25px;
+  width: 30px;
+  height: 22px;
   background: none;
   border: none;
   cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 1100;
+  z-index: 2000;
 }
 
 .nav-toggle-bar {
-  height: 4px;
+  height: 3px;
   width: 100%;
   background-color: #fff;
   border-radius: 2px;
 }
 
-/* === Nav List Styling === */
+/* === Nav List Styling (Default for desktop) === */
 .nav-links {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style: none;
   gap: 2rem;
 }
 
-/* === Responsive styling === */
+/* === Responsive Hamburger Behavior === */
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
@@ -326,12 +326,12 @@ section {
     position: fixed;
     top: 0;
     right: 0;
+    width: 70%;
     height: 100vh;
-    width: 60%;
-    background-color: rgba(15, 15, 35, 0.95);
-    padding-top: 4rem;
+    padding-top: 5rem;
     padding-left: 2rem;
-    z-index: 1000;
+    background-color: rgba(15, 15, 35, 0.95);
+    z-index: 1500;
     transition: transform 0.3s ease;
   }
 
@@ -344,8 +344,9 @@ section {
   }
 
   .nav-links a {
-    color: white;
     font-size: 1.2rem;
+    color: white;
     text-decoration: none;
   }
 }
+
