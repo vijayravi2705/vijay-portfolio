@@ -214,7 +214,11 @@ section {
 .cert-details h3 { margin: 0 0 0.5rem 0; color: #6DD5ED; font-size: 1.15rem;}
 .cert-details p { margin: 0 0 0.5rem 0; color: #e5e5e5;}
 .cert-details a { color: #6DD5ED; text-decoration: underline; font-weight: 500;}
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+    .hero {
+    min-height: calc(100vh - 70px);
+    padding-top: 70px; /* If navbar height shrinks */
+  }
     .hero h1 { font-size: 2.5rem;}
     .hero-container { grid-template-columns: 1fr; gap: 2rem; text-align: center;}
     .hero-content { text-align: center; order: 2;}
