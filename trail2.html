@@ -12,6 +12,12 @@
 <body>
     <div class="particles"></div>
     <nav>
+        <button class="nav-toggle" aria-label="Open navigation">
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+</button>
+
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -397,6 +403,23 @@
                 });
             });
         });
+
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('nav ul');
+
+navToggle.addEventListener('click', function() {
+  navToggle.classList.toggle('open');
+  navMenu.classList.toggle('menu-open');
+});
+
+// Optional: close menu when a link is clicked (mobile UX best practice)
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navMenu.classList.remove('menu-open');
+  });
+});
+
 
 
     </script>
