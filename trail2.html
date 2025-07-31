@@ -18,7 +18,11 @@
   <span class="nav-toggle-bar"></span>
 </button>
 
+<<<<<<< HEAD
         <ul>
+=======
+        <ul class="nav-links">
+>>>>>>> d293ab2 (Updated portfolio layout and hamburger responsiveness)
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -403,6 +407,12 @@
                 });
             });
         });
+const toggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('nav ul');
@@ -423,6 +433,11 @@ document.querySelectorAll('nav a').forEach(link => {
 
 
     </script>
+
+
+
+
 </body>
 
 </html>
+
