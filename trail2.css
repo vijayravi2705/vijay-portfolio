@@ -52,6 +52,10 @@ section {
 }
 .hero {
     height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 2rem;
+    
+  padding-top: 90px; /* or a bit more, equal to navbar height */
+  box-sizing: border-box;
+
 }
 .hero-container {
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; width: 100%; align-items: center;
