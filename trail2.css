@@ -282,78 +282,69 @@ section {
     transform-style: preserve-3d;
     will-change: transform;
 }
-/* Hamburger icon styles */
+/* === Hamburger button styling === */
 .nav-toggle {
   display: none;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 12px;
-  right: 24px;
-  z-index: 1101;
-}
-
-.nav-toggle-bar {
-  display: block;
-  width: 28px;
-  height: 3.5px;
-  margin: 4px 0;
-  border-radius: 2px;
-  background: #eceeff;
-  transition: 0.33s;
-}
-
-/* Show hamburger button only on small screens */
-@media (max-width: 900px) {
-  nav ul {
-    display: none; /* ← this Hides the menu initially */
-    position: absolute;
-    top: 58px;
-    right: 24px;
-    flex-direction: column;
-    background: rgba(24, 25, 55, 0.98);
-    padding: 1.4rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(65, 50, 120, 0.15);
-    z-index: 1100;
-  }
-
-  nav ul.menu-open {
-    display: flex;  /* ← shown when class is toggled */
-  }
-
-
-   .nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
+  justify-content: space-between;
+  width: 35px;
+  height: 25px;
   background: none;
   border: none;
   cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 1101;
+  z-index: 1100;
+}
 
 .nav-toggle-bar {
-  display: block;
-  width: 30px;
   height: 4px;
-  margin: 5px 0;
+  width: 100%;
+  background-color: #fff;
   border-radius: 2px;
-  background: #ffffff; /* bright white */
-  transition: all 0.3s ease;
 }
 
+/* === Nav List Styling === */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+/* === Responsive styling === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 60%;
+    background-color: rgba(15, 15, 35, 0.95);
+    padding-top: 4rem;
+    padding-left: 2rem;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
   }
 }
-
