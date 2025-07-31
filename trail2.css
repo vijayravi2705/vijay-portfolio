@@ -311,46 +311,25 @@ section {
 
 /* Show hamburger button only on small screens */
 @media (max-width: 900px) {
-  .nav-toggle {
-    display: flex;
-  }
   nav ul {
+    display: none; /* ← this Hides the menu initially */
     position: absolute;
     top: 58px;
     right: 24px;
+    flex-direction: column;
     background: rgba(24, 25, 55, 0.98);
+    padding: 1.4rem;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(65, 50, 120, 0.15);
-    min-width: 190px;
-    padding: 1.4rem 0.4rem;
-    flex-direction: column;
-    align-items: flex-start;
-    display: none;      /* Hide menu by default */
     z-index: 1100;
-    gap: 0.7rem;
   }
-  nav ul.menu-open {    /* Shown if JS adds .menu-open */
+
+  nav ul.menu-open {
+    display: flex;  /* ← shown when class is toggled */
+  }
+
+  .nav-toggle {
     display: flex;
   }
-  nav ul li {
-    width: 100%;
-  }
-  nav a {
-    width: 100%;
-    padding: 0.7rem 1.2rem;
-    text-align: left;
-    border-radius: 9px;
-  }
-}
-
-/* Animate hamburger to X on open */
-.nav-toggle.open .nav-toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav-toggle.open .nav-toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.open .nav-toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
 }
 
